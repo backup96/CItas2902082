@@ -56,4 +56,6 @@ public abstract class USUARIOS {
     public void setNumeroIdentificación(int numeroIdentificación) {
         this.numeroIdentificación = numeroIdentificación;
     }
+
+    public abstract String getInfo();
 }

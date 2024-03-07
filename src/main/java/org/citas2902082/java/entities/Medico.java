@@ -33,4 +33,9 @@ public class Medico extends USUARIOS {
         this.especialidad = especialidad;
     }
 
+    @Override
+    public String getInfo() {
+        String info = "Nombre: " + nombres + " " + apellidos + " Especialidad: " + especialidad;
+        return info;
+    }
 }

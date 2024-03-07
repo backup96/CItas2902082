@@ -5,4 +5,10 @@ public class ENFERMEROS extends USUARIOS {
             int numeroIdentificación) {
         super(id, nombres, apellidos, tipoIdentificacion, numeroIdentificación);
     }
+
+    @Override
+    public String getInfo() {
+        String info = "Nombre: " + nombres + " " + apellidos;
+        return info;
+    }
 }

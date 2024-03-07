@@ -3,7 +3,7 @@ package org.citas2902082.java.entities;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public class CitasENFERMEROS extends Cita {
+public class CitasENFERMEROS extends Cita implements AGENDABLE {
     String procedimiento;
     String enfermero;
 
@@ -14,4 +14,19 @@ public class CitasENFERMEROS extends Cita {
         this.enfermero = enfermero;
     }
 
+    @Override
+    public void agendarCita(LocalDateTime fecha, LocalTime hora) {
+        this.setFecha(fecha);
+        this.setHora(hora);
+    }
+
+    @Override
+    public void cancelarCita() {
+
+    }
+
+    @Override
+    public void reagendarCita() {
+
+    }
 }

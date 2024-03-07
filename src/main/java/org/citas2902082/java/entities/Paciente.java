@@ -86,4 +86,11 @@ public class Paciente extends USUARIOS {
         this.factorRH = factorRH;
     }
 
+    @Override
+    public String getInfo() {
+        String info = "Nombre: " + nombres + " " + apellidos + " Email: " + correoElectronico + " Tipo de sangre: "
+                + tipoSangre + factorRH + " Altura: " + altura + " Peso: " + peso;
+        return info;
+    }
+
 }

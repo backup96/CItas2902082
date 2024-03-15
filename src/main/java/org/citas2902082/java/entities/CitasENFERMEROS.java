@@ -7,8 +7,10 @@ public class CitasENFERMEROS extends Cita implements AGENDABLE {
     String procedimiento;
     String enfermero;
 
-    public CitasENFERMEROS(int id, LocalDateTime fecha, LocalTime hora, Medico medico, Paciente paciente,
-            Consultorio consultorio, String procedimiento, String paciente2, String enfermero) {
+    public CitasENFERMEROS(int id, LocalDateTime fecha, LocalTime hora,
+            String medico,
+            String paciente,
+            int consultorio, String procedimiento, String paciente2, String enfermero) {
         super(id, fecha, hora, medico, paciente, consultorio);
         this.procedimiento = procedimiento;
         this.enfermero = enfermero;
@@ -26,7 +28,8 @@ public class CitasENFERMEROS extends Cita implements AGENDABLE {
     }
 
     @Override
-    public void reagendarCita() {
-
+    public void reagendarCita(LocalDateTime fecha, LocalTime hora) {
+        this.setFecha(fecha);
+        this.setHora(hora);
     }
 }

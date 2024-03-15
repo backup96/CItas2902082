@@ -8,5 +8,5 @@ public interface AGENDABLE {
 
     public void cancelarCita();
 
-    public void reagendarCita();
+    public void reagendarCita(LocalDateTime fecha, LocalTime hora);
 }

@@ -4,14 +4,45 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class CitasMEDICOS extends Cita implements AGENDABLE {
-    String motivoConsulta;
-    Estado estado;
+    private String motivoConsulta;
+    private Estado estado;
+    private String medico;
 
-    public CitasMEDICOS(int id, LocalDateTime fecha, LocalTime hora, Medico medico, Paciente paciente,
-            Consultorio consultorio, String motivoConsulta, Estado estado) {
+    public CitasMEDICOS(int id,
+            LocalDateTime fecha,
+            LocalTime hora,
+            String medico,
+            String paciente,
+            int consultorio,
+            String motivoConsulta,
+            Estado estado) {
         super(id, fecha, hora, medico, paciente, consultorio);
         this.motivoConsulta = motivoConsulta;
         this.estado = estado;
+    }
+
+    public String getMotivoConsulta() {
+        return motivoConsulta;
+    }
+
+    public void setMotivoConsulta(String motivoConsulta) {
+        this.motivoConsulta = motivoConsulta;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public String getMedico() {
+        return medico;
+    }
+
+    public void setMedico(String medico) {
+        this.medico = medico;
     }
 
     @Override
@@ -23,12 +54,13 @@ public class CitasMEDICOS extends Cita implements AGENDABLE {
 
     @Override
     public void cancelarCita() {
-
+        this.estado = Estado.CANCELADA;
     }
 
     @Override
-    public void reagendarCita() {
-
+    public void reagendarCita(LocalDateTime fecha, LocalTime hora) {
+        this.setFecha(fecha);
+        this.setHora(hora);
     }
 
 }

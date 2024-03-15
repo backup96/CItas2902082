@@ -8,15 +8,17 @@ public class Cita {
     private int id;
     private LocalDateTime fecha;
     private LocalTime hora;
-    private Medico medico;
-    private Paciente paciente;
-    private Consultorio consultorio;
+    private String medico;
+    private String paciente;
+    private int consultorio;
 
     public Cita() {
     }
 
-    public Cita(int id, LocalDateTime fecha, LocalTime hora, Medico medico, Paciente paciente,
-            Consultorio consultorio) {
+    public Cita(int id, LocalDateTime fecha, LocalTime hora,
+            String medico,
+            String paciente,
+            int consultorio) {
         this.id = id;
         this.fecha = fecha;
         this.hora = hora;
@@ -49,27 +51,27 @@ public class Cita {
         this.hora = hora;
     }
 
-    public Medico getMedico() {
+    public String getMedico() {
         return medico;
     }
 
-    public void setMedico(Medico medico) {
+    public void setMedico(String medico) {
         this.medico = medico;
     }
 
-    public Paciente getPaciente() {
+    public String getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(Paciente paciente) {
+    public void setPaciente(String paciente) {
         this.paciente = paciente;
     }
 
-    public Consultorio getConsultorio() {
+    public int getConsultorio() {
         return consultorio;
     }
 
-    public void setConsultorio(Consultorio consultorio) {
+    public void setConsultorio(int consultorio) {
         this.consultorio = consultorio;
     }
 
